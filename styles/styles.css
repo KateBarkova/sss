@@ -4,31 +4,36 @@
   font-weight: 400;
   src: url("../fonts/ptsans-400.woff2") format("woff2");
   font-display: swap;
-  }
+/* отступы все сделай нормально */
+}
 
-  @font-face {
-    font-family: "PT Sans";
-    font-style: normal;
-    font-weight: 700;
-    src: url("../fonts/ptsans-700.woff2") format("woff2");
-    font-display: swap;
-    }
+@font-face {
+  font-family: "PT Sans";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../fonts/ptsans-700.woff2") format("woff2");
+  font-display: swap;
+}
 
 
-  body {
-    width: 1200px;
-    display: flex;
-    flex-direction: column;
-    margin: 0 auto;
-    min-height: 100%;
-    font-family: "PT Sans", sans-serif;
-    font-size: 22px;
-    line-height: 26px;
-    font-weight: 400;
-    color: #333333;
-    background-color: #F2F2F2;
-    box-shadow: 0 0 10px 0 #333333;
-
+body {
+  /* min-height: 100%; поставь под ширину, лучше когда все идет по смыслу
+  ширина-высота-маргины-паддинги
+  позиционирование отдельно
+  текстовые настройки отдельно и тп, все в едином стиле
+  */
+  width: 1200px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  min-height: 100%;
+  font-family: "PT Sans", sans-serif;
+  font-size: 22px;
+  line-height: 26px;
+  font-weight: 400;
+  color: #333333;
+  background-color: #F2F2F2;
+  box-shadow: 0 0 10px 0 #333333;
 }
 
 .visually-hidden {
@@ -36,31 +41,34 @@
   transform: scale(0);
 }
 
-    .page-header {
-      display:flex;
-      justify-content: space-between;
-      font-size: 20px;
-      font-weight: 700;
-      line-height: 24px;
-      background-color:#ffffff;
-      }
+.page-header {
+  /* пробел */
+  display:flex;
+  justify-content: space-between;
+  /* align-items: center;  где? */
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
+  background-color:#ffffff;
+}
 
-      .page-header-logo {
-      margin: 0 26px -6px 70px;
-      }
+.page-header-logo {
+  margin: 0 26px -6px 70px;
+}
 
 .button {
-    color: #ffffff;
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 20px;
-    text-transform: uppercase;
-    padding: 8px 50px 8px 50px;
-    border-radius: 4px;
-    border: none;
-    text-align: center;
-    text-decoration: none;
-    background: #756157;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  text-transform: uppercase;
+  padding: 8px 50px 8px 50px;
+  border-radius: 4px;
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  /* background-color лучше писать, если тебе надо стилизовать только цвет */
+  background: #756157;
 }
 
 .search-button {
@@ -86,33 +94,42 @@ background: #7DB54F;
 }
 
 .navigation {
+  /* тут не нужно задавать жестко ширину, тут нужно сделать justify content space between */
   width: 1200px;
   display: flex;
 }
 
 .navigation-list {
   display: flex;
+  /* тут не нужно задавать жестко ширину, тут нужно сделать gap */
   width: 465px;
   margin: 0;
-padding: 0;
-list-style: none;
+  padding: 0;
+  list-style: none;
 }
 
 .navigation-user {
   display: flex;
+  /*  старайся не задавать нигде ширину, где можно сделать это паддингами и расстояниями между элементами
+  если что-то больше, чем надо - то лучше задавать max-width - так гибче и лучше еще на будущее - для адаптивной верстки
+  */
   width: 320px;
   list-style: none;
   margin: 0;
   padding: 0;
+  /*  лишнее, если сделаешь space between */
   margin-left: auto;
 }
 
 .navigation-link {
+  /*  тут во первых, у активной ссылки должен быть доп класс - чтоб ее стилизовать
+  во вторых, надо у нее сделать паддинг внизу, чтобы подчеркивание относилось именно к ссылке и увеличилась площадь клика
+  */
   text-align : center;
   color : inherit;
   text-decoration : none;
   list-style: none;
-  }
+}
 
   .navigation-user-link {
   text-align : center;
@@ -121,22 +138,25 @@ list-style: none;
   }
 
 .likes-number {
-width: 20px;
-height: 20px;
-top: 11px;
-left: 20px;
-border-radius: 50%;
-background-color: #7db54f;
-padding: 5px 5px 5px 4px;
+  /*  топ  лефт не работают если position static
+  и размеры нельзя задать для спана, когда он строчный элемент, надо сделать его display block наприер
+  */
+  width: 20px;
+  height: 20px;
+  top: 11px;
+  left: 20px;
+  border-radius: 50%;
+  background-color: #7db54f;
+  padding: 5px 5px 5px 4px;
 }
 
 .welcome-image {
-background-color: #B0C4DE;
-color: #000000;
-background-image: url("../images/white-frame-decoration.svg"), url("../images/index-background.jpg");
-background-size: 100% auto, cover;
-background-repeat: no-repeat;
-background-position: left bottom, left top;
+  color: #000000;
+  background-color: #B0C4DE;
+  background-image: url("../images/white-frame-decoration.svg"), url("../images/index-background.jpg");
+  background-size: 100% auto, cover;
+  background-repeat: no-repeat;
+  background-position: left bottom, left top;
 }
 
 .greeting-image {
@@ -194,16 +214,20 @@ text-align: center;
   }
 
   .reason-item-light {
-
-  background: rgba(131, 179, 211, 0.12);
-  width: 400px;
-  height: 385px;
+    /* сначала размеры, потом цвет, background-color
+    тут я написала что сделала бы другое именование классов - в html смотри про блок жилье-еда-сувениры
+    + тут нужно задать паддинги и max-width, а не задавать строго ширину
+    и высоту тоже не задавать строго, а паддингами это регулировать
+    */
+    width: 400px;
+    height: 385px;
+    background: rgba(131, 179, 211, 0.12);
   }
 
   .reason-item-medium {
-  background: rgba(131, 179, 211, 0.2);
-  width: 400px;
-  height: 385px;
+    background: rgba(131, 179, 211, 0.2);
+    width: 400px;
+    height: 385px;
   }
 
   .services-list {
@@ -213,6 +237,8 @@ text-align: center;
     margin:0;
     padding:0;
   }
+  /* больно глазам, отступы поправь
+    */
   .services-list h3 {
         font-size: 24px;
     font-weight: 700;
@@ -226,7 +252,7 @@ text-align: center;
   font-weight: 400;
   line-height: 21px;
   }
-
+  /* вот надо класс сделать services-item, а цвет - nth-child */
 .services-item-light {
     background: rgba(131, 179, 211, 0.12);
     width: 400px;
@@ -245,11 +271,14 @@ text-align: center;
 }
 
 .subscribe {
+  /* тут уже отступы надо добавить, где они */
+  /* тут цвет черный и тогда subscribe-title и description без цвета*/
 background-image: url("../images/blurry-mountain-view.jpg");
 background-size: 100% auto;
 background-repeat: no-repeat;
 }
-
+ /* это стили со страницы каталога, их надо в другое место переместить, ниже*/
+ /* тут цвет белый и тогда текст весь будет белый*/
 .subscribe-catalog {
   text-align: center;
 }
@@ -308,11 +337,14 @@ text-align: center;
 
 
 .catalog-page {
+
   background-color: #FFFFFF;
   flex-grow: 1;
 }
 
 .container-catalog {
+   /*  тут паддинги нужны, чтобы белое было по бокам*/
+ /* и ширину задавай через max-width - сделаешь потом резиновый макет*/
   width: 1060px;
   margin: 0 auto;
 
@@ -349,6 +381,10 @@ display: flex;
 }
 
 .founded {
+   /*  а вам не говрили еще с заголовков, p - сбрасывать маргины и паддинги стандартные? какой нибудь normolize  подключать?
+   и это должно быть ниже, после всех фильтров и для карточек лучше гриды, ну либо на флексах разок сделать, чтоб понять
+   у тебя там все карточки поехали, их по три в строке должно быть
+   и внутри все оборачивай дивами и переверстывай*/
   display: flex;
 
 }

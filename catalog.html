@@ -39,41 +39,59 @@
         </ul>
       </nav>
     </header>
+    <!-- пробел лишний-->
+    <main class="catalog-page container-catalog">
+      <section class="catalog-page-filters">
+        <h1 class="catalog-page-title">Гостиницы Седоны</h1>
+        <div class="catalog-nav">
+          <ul class="breadcrumbs-list">
+            <li class="breadcrumbs-item">
+              <!--в ссылках можно добавить title и внутри убрать эти спаны
+              нужно прочитать все требования к проекту, чтоб понять можно вам так делать или нет
 
-    <main class="catalog-page container-catalog ">
-           <section class="catalog-page-filters">
-      <h1 class="catalog-page-title">Гостиницы Седоны</h1>
-      <div class="catalog-nav">
-        <ul class="breadcrumbs-list">
-          <li class="breadcrumbs-item">
-            <a class="breadcrumbs-link" href="index.html">
-              <span class="visually-hidden">Главная</span></a>
-          </li>
-          <li class="breadcrumbs-list">
-            <a class="breadcrumps-link-current">Гостиницы</a>
-          </li>
-        </ul>
-      </div>
+              -->
+              <a class="breadcrumbs-link" href="index.html">
+                <span class="visually-hidden">Главная</span>
+              </a>
+            </li>
+            <li class="breadcrumbs-list">
+              <a class="breadcrumps-link-current">Гостиницы</a>
+            </li>
+          </ul>
+        </div>
 
 
-          <h2 class="visually-hidden">Подбор гостиницы по нескольким параметрам</h2>
+        <h2 class="visually-hidden">Подбор гостиницы по нескольким параметрам</h2>
         <form class="page-filters" action="https://echo.htmlacademy.ru/" method="get">
+          <!-- этот див не верно закрывается  -->
         <div class="filters-container">
-
+          <!-- на след уровне вы будете проходитьк ак классы именовать правильно, но все таки
+           вот у тебя див filters-container без catalog, потом catalog-filters-group, назови тогда уж catalog-filters-container
+           либо все без каталог
+          -->
           <fieldset class="catalog-filters-group">
             <legend class="catalog-filters-title">Инфраструктура:</legend>
             <ul class="catalog-filters-list">
               <li class="catalog-filters-item">
                 <label class="control">
-                  <input class="control-input" type="checkbox" name="swimming-pool" checked>Бассейн</label>
+                    <!-- отступы
+                     id у инпутов нет
+                    -->
+                  <input class="control-input" type="checkbox" name="swimming-pool" checked>
+                  Бассейн
+                </label>
               </li>
               <li class="catalog-filters-item">
                 <label class="control">
-                  <input class="control-input" type="checkbox" name="parking" checked>Парковка</label>
+                  <input class="control-input" type="checkbox" name="parking" checked>
+                  Парковка
+                </label>
               </li>
               <li class="catalog-filters-item">
                 <label class="control">
-                  <input class="control-input" type="checkbox" name="wifi">WiFi</label>
+                  <input class="control-input" type="checkbox" name="wifi">
+                  WiFi
+                </label>
               </li>
             </ul>
           </fieldset>
@@ -83,8 +101,9 @@
             <ul class="catalog-filters-list">
               <li class="catalog-filters-item">
                 <label class="control" for="hotel">
-                  <input class="control-input" type="radio" name="housing-group" value="hotel" id="hotel"
-                    checked>Гостиница
+                  <!-- если у тебя инпут внутри label, то можно не писать for="hotel" -->
+                  <input class="control-input" type="radio" name="housing-group" value="hotel" id="hotel" checked>
+                  Гостиница
                 </label>
               </li>
               <li class="catalog-filters-item">
@@ -102,6 +121,7 @@
           </fieldset>
 
           <fieldset class="catalog-filters-cost">
+            <!-- > - символ лишний -->
             <legend class="catalog-filters-title">Стоимость,₽:></legend>
             <label class="control-cost" for="from">От</label>
             <input class="control-input" type="number" name="from" id="from" placeholder="0">
@@ -113,19 +133,26 @@
           <button class="button button-reset" type="reset">Сбросить</button>
         </form>
       </section>
+    <!-- что это закрывает не пойму, вот конец дива, начала не нашла
+    он не там у тебя,  перед  </form> должен быть
+    -->
     </div>
 
       <section class="search-result">
         <div class="founded">
           <h2 class="search-result-title">Найдено гостиниц:
-          <span class="search-result-number">38</span>
-        </h2>
-            <select class="select-control" aria-label="Сортировка">
+            <span class="search-result-number">38</span>
+          </h2>
+          <select class="select-control" aria-label="Сортировка">
             <option value="cheap-first">Сначала дешевые</option>
             <option value="popular-first">Сначала популярные</option>
             <option value="expensive-first">Сначала дорогие</option>
           </select>
           <ul class="catalog-display-list">
+            <!-- тоже что ранее про спаны лишние
+             и тоже - классы можно все одинаковые дать catalog-display-item-cards
+             а вот view-icon можно сделать класс="view-icon view-icon-cards" для разных картинок
+            -->
             <li class="catalog-display-item-cards">
               <a class="view-icon" href="#">
                 <span class="visually-hidden">Показать в виде карточек></span>
@@ -146,15 +173,21 @@
 
         <ul class="found-hotel-list">
           <li class="found-hotel-item">
-            <a class="found-hotel-link-img" href="#" tabindex="-1"><img class="found-hotel-img" src="images/catalog/amara-resort-spa.jpg" width="300" height="212"
-                alt="вид из пещеры на звездное небо"></a>
+            <a class="found-hotel-link-img" href="#" tabindex="-1">
+              <img class="found-hotel-img" src="images/catalog/amara-resort-spa.jpg" width="300" height="212"
+                alt="вид из пещеры на звездное небо">
+            </a>
             <a class="found-hotel-link" href="#" tabindex="-1">
               <h3 class="hotel-card-title">Amara resort and SPA</h3>
             </a>
+             <!-- Гостиница и цена - в див оберни, чтоб потом заверстать  и далее следующие -  Подробнее и В избранное -->
             <p class="found-hotel-type">Гостиница</p>
             <p class="found-hotel-price">от 4000 р.</p>
             <a class="button" href="#">Подробнее</a>
             <button class="button button-blue" type="button">В избранное</button>
+            <!-- и это тоже в див - звезды и рейтинг
+            тоже p можно ариа лейбл и без спана
+            -->
             <p class="rating-stars">
               <span class="visually-hidden">Гостиница 4 звезды</span>
             </p>
@@ -233,6 +266,8 @@
             <a class="pagination-link">4</a>
           </li>
           <li class="pagination-item">
+            <!-- пробел лишний
+            -->
             <a class="pagination-link  pagination-link-between" href="#">...</a>
           </li>
           <li class="pagination-item">
