@@ -5,12 +5,14 @@
     <meta charset="utf-8">
     <title>HTML Academy: Седона</title>
     <link rel="stylesheet" href="styles/styles.css">
-      </head>
+  </head>
 
   <body>
     <header class="page-header">
+      <!-- нужно пройти все и поправить отступы-->
       <a class="navigation-logo" href="index.html" aria-current="page">
-        <img class="page-header-logo" src="images/logo-sedona.svg" width="140" height="70" alt="лого сайта Седона"></a>
+        <img class="page-header-logo" src="images/logo-sedona.svg" width="140" height="70" alt="лого сайта Седона">
+      </a>
       <nav class="navigation">
         <ul class="navigation-list">
           <li class="navigation-item">
@@ -26,12 +28,15 @@
         <ul class="navigation-user">
           <li class="navigation-user-item">
             <a class="navigation-user-link" href="#">
-              <span class="visually-hidden">Поиск</span></a>
+              <!-- лишний спан - я там дальше подробнее пишу-->
+              <span class="visually-hidden">Поиск</span>
+            </a>
           </li>
           <li class="navigation-user-item">
             <a class="navigation-user-link" href="#">
               <span class="visually-hidden">Нравится отелей</span>
-              <span class="likes-number">12</span></a>
+              <span class="likes-number">12</span>
+            </a>
           </li>
           <li class="navigation-user-item">
             <a class="button" href="#">Хочу сюда!</a>
@@ -42,35 +47,40 @@
 
     <main class="main-index">
       <section class="welcome-image">
+        <!-- зачем тут теги внутри текста, который не видно?-->
         <h1 class="visually-hidden"> Добро пожаловать в <b>великолепную</b> Седону
           <i>Потому что Гранд-Каньон отстой!</i>
         </h1>
+        <!-- хз, может вам так сказали, писать на английском альты, но если сайт на русском, то и альт на русском кмк -->
         <img class="greeting-image" src="images/welcome.svg" width="458" height="352" lang="en"
           alt="Welcome to the gorgeous Sedona, because the Grand Canyon sucks!">
       </section>
       <section class="reason">
-        <h2 class="reason-title-main">Седона — небольшой городок в Аризоне,<br>
-        заслуживающий большего!</h2>
+        <h2 class="reason-title-main">
+          Седона — небольшой городок в Аризоне,
+          <br>
+          заслуживающий большего!
+        </h2>
         <p class="reason-description-main">Рассмотрим причины, по которым Седона круче, чем Гранд-Каньон!</p>
-              <ul class="reason-list">
-              <li class="reason-item-dark">
+        <ul class="reason-list">
+          <li class="reason-item-dark">
             <h3 class="reason-title-dark">Настоящий городок</h3>
             <p class="reason-decription-dark">Седона — не аттракцион для туристов, там течёт своя жизнь</p>
             <img class="reason-dark-image" src="images/reason-true-town.jpg" width="800" height="385"
               alt="аутентичнные здания с вывешенными на фасадах флагами на фоне красивого горного пейзажа">
           </li>
 
-             <li class="reason-item-light">
+          <li class="reason-item-light">
             <h3 class="reason-title-light">Небольшая площадь</h3>
             <p class="reason-decription-light">Все достопримечательности находятся очень близко</p>
           </li>
 
-            <li class="reason-item-medium">
+          <li class="reason-item-medium">
             <h3 class="reason-title-medium">Красивая дорога</h3>
             <p class="reason-decription-medium">Ехать в Седону из Лас-Вегаса совсем не скучно!</p>
           </li>
 
-           <li class="reason-item-light">
+          <li class="reason-item-light">
             <h3 class="reason-title-light">Мало туристов</h3>
             <p class="reason-decription-light">Большинство едет в Гранд Каньон и толпится там</p>
           </li>
@@ -86,7 +96,11 @@
       <section class="services">
         <h2 class="services-title-main"> Приезжайте в Седону отдохнуть<br> в комфорте и уюте!</h2>
         <p class="services-description-main">Опытный персонал и качественное обслуживание!</p>
-
+        <!-- у тебя три равнозначных пункта, тут лучше не называть их services-item-light и без light, они отличаются только цветом
+        для варианта, который ты написал - придется писать стили для  services-item-light и для services-item отдельно, хотя они отличаются только картинкой и
+        цветом фона. Назови одинаково, а раздичия сделаешь через nth-child
+        то же самое для предыдущего блока - небольшая площадт, красива дорога и мало туристов
+        -->
         <ul class="services-list">
           <li class="services-item-light">
             <h3 class="services-title-light">Жильё</h3>
@@ -112,6 +126,11 @@
         <h2 class="search-title">Заинтересовались?</h2>
         <p class="search-description">Укажите предполагаемые даты поездки,и мы покажем вам лучшие предложения гостиниц в
           Седоне</p>
+        <!-- вот тут у тебя класс button и ты его используешь в нескольких местах, потому что для кнопок стили единые
+         то же самое можно сделать для тайтлов - (в этом сблоке - Заинтересовались, и в других местах. И не писать для каждого тогда размер текста и тп
+         Только маргины и паддинги не пиши, это лучше писать индивидуально для блока
+         Тайтлы можно в класс и сабтайтлы - то, что под классом
+        -->
         <a class="button search-button" href="#">Поиск гостиницы в Седоне</a>
       </section>
 
@@ -131,8 +150,12 @@
         <h2 class="visually-hidden">Социальные сети</h2>
         <ul class="social-list">
           <li class="social-item">
+            <!-- вообще в ссылках можно добавить title и внутри убрать эти спаны
+            нужно прочитать все требования к проекту, чтоб понять можно вам так делать или нет
+            ну можно еще и ариа лейбел впихнуть дополнительно до кучи
+            -->
             <a class="social-link" href="https://vk.com/htmlacademy/"><span>Вконтакте</span>
-              </a>
+            </a>
           </li>
           <li class="social-item">
             <a class="social-link" href="https://t.me/htmlacademy/"><span>Телеграм</span></a>
